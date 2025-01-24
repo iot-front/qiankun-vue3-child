@@ -3,8 +3,10 @@ import App from './App.vue'
 import router from '@/router/index';
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import haieruiPlus from 'haierui-plus'
+import '@/assets/css/base.css'
 import { useMainStore } from '@/pinia/index'
 
 const pinia = createPinia()
@@ -20,6 +22,7 @@ function render(props = {}) {
   instance = createApp(App)
     .use(pinia)
     .use(ElementPlus)
+    .use(haieruiPlus)
     .use(router)
     .mount(container ? container.querySelector('#child-app') : '#child-app')
 }
@@ -35,6 +38,7 @@ export async function mount(props = {}) {
   render()
   useMainStore().setMainStore(props.mainStore)
   useMainStore().pageType = props.pageType
+  useMainStore().baseDataUrl = props.baseDataUrl
 }
 /**
  * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例

@@ -1,13 +1,16 @@
 <template>
-  <div class="entering-home-wrap">数据导入数据导入数据导入</div>
+  <div class="common-module">
+    <h-module-title title="客诉明细数据"></h-module-title>
+  </div>
 </template>
 
 <script setup>
-
+import { apiSearchIndustryDesc } from '@/api/service'
+apiSearchIndustryDesc().then(res => {
+  console.log('testDemo', res) 
+})
 </script>
 
 <style lang="scss" scoped>
-.entering-home-wrap {
-  color: $active-color;
-}
+
 </style>

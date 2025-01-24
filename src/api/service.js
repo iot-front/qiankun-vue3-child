@@ -1,5 +1,6 @@
 import { afRequest } from './api';
-// 获取城市区域
-export const apiGetRegion = (params) => {
-	return afRequest('get', '/openServerInf/oneCode/afterSales/getCityList', params);
+const baseapi = '/bigdata-databack-logquery-rest';
+// 测试
+export const apiSearchIndustryDesc = () => {
+	return afRequest('post', `${baseapi}/app/query`, {});
 };
