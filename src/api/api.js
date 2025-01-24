@@ -1,4 +1,5 @@
 import { useMainStore } from '@/pinia/index';
+import { useRouter } from 'vue-router';
 /**
  * @description: 
  * @param {method} method 请求方式
@@ -12,4 +13,13 @@ export const afRequest = (method, path, params, headers, other, basepath=useMain
     hgLoginCode: '10401',
     ...params
   }, headers, other, basepath)
+}
+let router = null;
+if (useMainStore().pageType === 'HAIER_DATA') {
+  router = window.fnqkDssRouter
+} else {
+  router = useRouter()
+}
+export {
+  router
 }

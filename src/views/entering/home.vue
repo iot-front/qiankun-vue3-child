@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+// import { router } from '@/api/api.js';
 import { apiSearchIndustryDesc } from '@/api/service'
 apiSearchIndustryDesc().then(res => {
   console.log('testDemo', res) 
