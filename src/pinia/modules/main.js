@@ -4,7 +4,8 @@ export const useMainStore = defineStore('main', {
   state: () => ({
     baseDataUrl: '',
     mainStore: {},
-    pageType: ''
+    pageType: '',
+    locale: 'zh'
   }),
   getters: {},
   actions: {
